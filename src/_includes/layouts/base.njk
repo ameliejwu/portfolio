@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}{{ site.name }}</title>
+    <link rel="icon" href="{{ site.baseUrl }}static/images/homepage/ajwStamp.ico">
+    <link rel="stylesheet" href="{{ site.baseUrl }}static/css/{{ stylesheet or 'style.css' }}">
+</head>
+<body class="{{ bodyClass or '' }}">
+    <main class="main-content">
+        {% if showNavigation !== false %}
+        <div class="overlay-text">
+            <div class="nav-links">
+                <a href="{{ site.baseUrl }}about/" class="nav-item">about</a>
+                <a href="{{ site.baseUrl }}photography/" class="nav-item">photography</a>
+                <a href="{{ site.baseUrl }}visual-design/" class="nav-item">visual design</a>
+                <a href="{{ site.baseUrl }}projects/" class="nav-item">projects</a>
+            </div>
+            <a href="{{ site.baseUrl }}" class="nav-item nav-name">
+                <img src="{{ site.baseUrl }}static/images/homepage/ajwStamp.jpg" alt="Your Name Logo" class="name-logo">
+            </a>
+        </div>
+        {% endif %}
+
+        {{ content | safe }}
+    </main>
+
+    {% if lightbox %}
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-wrapper">
+            <button class="lightbox-nav lightbox-prev">‹</button>
+            <img class="lightbox-content" id="lightbox-img" alt="">
+            <button class="lightbox-nav lightbox-next">›</button>
+        </div>
+        <div class="lightbox-counter">
+            <span id="current-image">1</span> / <span id="total-images">9</span>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if not inlineScript %}
+    <script src="{{ site.baseUrl }}static/js/{{ jsFile or 'script.js' }}"></script>
+    {% endif %}
+</body>
+</html>
