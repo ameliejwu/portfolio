@@ -108,7 +108,7 @@ body {
 }
 
 .image-item:hover .image-title {
-    color: rgb(8, 112, 25);
+    color: rgb(188, 16, 16);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -153,7 +153,7 @@ body {
     }
 
     .image-item:nth-child(3) img {
-        max-width: 100%;
+        max-width: 200px;
     }
 }
 
