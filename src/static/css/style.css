@@ -26,10 +26,6 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 /* Navigation */
@@ -45,10 +41,6 @@
     align-items: center;
     z-index: 1000;
     font-size: 25px;
-    user-select: auto;
-    -webkit-user-select: auto;
-    -moz-user-select: auto;
-    -ms-user-select: auto;
 }
 
 .nav-links {
@@ -88,64 +80,47 @@
     transform: translateY(-50%);
     width: 800px;
     max-height: 70vh;
-    background: var(--text-bg);
-    backdrop-filter: blur(10px);
     padding: 30px;
-    z-index: 0;
-    user-select: text;
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    animation: fadeIn 0.8s ease-out;
+    z-index: 1;
 }
 
 .about-container h1 {
+    margin-bottom: 30px;
+    font-family: var(--font-family);
     font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-weight: 300;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .about-container h2 {
+    font: var(--font-family);
     font-size: 1.5rem;
-    color: var(--secondary-color);
     margin: 25px 0 15px 0;
     font-weight: 400;
 }
 
 .about-container p {
+    font: var(--font-family);
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--secondary-color);
     margin-bottom: 15px;
 }
 
 .about-container a {
-    color: var(--accent-color);
+    font: var(--font-family);
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.about-container small {
+    font: var(--font-family);
 }
 
 .about-container a:hover {
     color: rgb(210, 34, 34);
     text-decoration: underline;
-}
-
-/* Custom scrollbar */
-.about-container::-webkit-scrollbar {
-    width: 6px;
-}
-
-.about-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.about-container::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.about-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.5);
 }
 
 /* Playground and Draggables */
@@ -162,6 +137,7 @@
     top: 50%;
     left: 50%;
     cursor: grab;
+    z-index: 1;
     transition: transform 0.2s ease;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
@@ -171,7 +147,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    user-select: text;
     -webkit-touch-callout: none;
 }
 
