@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tickets - AMELIE WU</title>
     <link rel="icon" href="/AWU_WEB2/static/images/homepage/ajwStamp.ico">
+    <link rel="stylesheet" href="/AWU_WEB2/static/css/navbar.css">
     <link rel="stylesheet" href="/AWU_WEB2/static/css/style-tickets.css">
 </head>
 <body class="">
@@ -29,13 +30,14 @@
 </div>
 <div class="gallery-container">
     <div class="gallery-grid">
+        
         <div class="gallery-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <img src="/AWU_WEB2/static/images/tickets/E2B6E117-1D66-42F1-A4CA-18C303C3C323_1_105_c.jpeg" alt="Ticket Front 1">
+                    <img src="/AWU_WEB2/static/images/tickets/front_harvard.png" alt="Ticket Front 1">
                 </div>
                 <div class="flip-card-back">
-                    <img src="/AWU_WEB2/static/images/tickets/7569D4A9-EDBA-4367-BB85-E4A9D998A3F0_1_105_c.jpeg" alt="Ticket Back 1">
+                    <img src="/AWU_WEB2/static/images/tickets/back_harvard.png" alt="Ticket Back 1">
                 </div>
             </div>
         </div>
@@ -43,10 +45,10 @@
         <div class="gallery-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.45.23ΓÇ»PM.png" alt="Ticket Front 2">
+                    <img src="/AWU_WEB2/static/images/tickets/front_heal.jpeg" alt="Ticket Front 2">
                 </div>
                 <div class="flip-card-back">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.45.44ΓÇ»PM.png" alt="Ticket Back 2">
+                    <img src="/AWU_WEB2/static/images/tickets/back_heal.jpeg" alt="Ticket Back 2">
                 </div>
             </div>
         </div>
@@ -54,10 +56,10 @@
         <div class="gallery-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.46.23ΓÇ»PM.png" alt="Ticket Front 3">
+                    <img src="/AWU_WEB2/static/images/tickets/front_matsuri.png" alt="Ticket Front 3">
                 </div>
                 <div class="flip-card-back">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.47.07ΓÇ»PM.png" alt="Ticket Back 3">
+                    <img src="/AWU_WEB2/static/images/tickets/back_matsuri.png" alt="Ticket Back 3">
                 </div>
             </div>
         </div>
@@ -65,10 +67,10 @@
         <div class="gallery-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.48.05ΓÇ»PM.png" alt="Ticket Front 4">
+                    <img src="/AWU_WEB2/static/images/tickets/front_permanent.png" alt="Ticket Front 4">
                 </div>
                 <div class="flip-card-back">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.48.19ΓÇ»PM.png" alt="Ticket Back 4">
+                    <img src="/AWU_WEB2/static/images/tickets/back_permanent.png" alt="Ticket Back 4">
                 </div>
             </div>
         </div>
@@ -76,23 +78,21 @@
         <div class="gallery-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.49.08ΓÇ»PM.png" alt="Ticket Front 5">
+                    <img src="/AWU_WEB2/static/images/tickets/front_royce.png" alt="Ticket Front 5">
                 </div>
                 <div class="flip-card-back">
-                    <img src="/AWU_WEB2/static/images/tickets/Screenshot 2025-07-10 at 9.49.51ΓÇ»PM.png" alt="Ticket Back 5">
+                    <img src="/AWU_WEB2/static/images/tickets/back_royce.png" alt="Ticket Back 5">
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
-
 <script>
     const galleryItems = document.querySelectorAll('.gallery-item');
-
     galleryItems.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            // Toggle the flipped state
             item.classList.toggle('flipped');
         });
     });
