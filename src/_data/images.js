@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-
+const baseUrl = "/AWU_WEB2"
 const galleryRoot = path.join(__dirname, "..", "static", "images");
 
 // Helper: get all image filenames (relative to galleryRoot) in a folder
@@ -13,7 +13,7 @@ function getImages(folder) {
       // Natural sort for numbers in filenames
       return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
     })
-    .map(file => `/AWU_WEB2/static/images/${folder}/${file}`);
+    .map(file => baseUrl + `/static/images/${folder}/${file}`);
 }
 
 function getPairedImages(folder, frontPattern, backPattern) {
@@ -22,8 +22,8 @@ function getPairedImages(folder, frontPattern, backPattern) {
   const backs = files.filter(f => backPattern.test(f));
   // Pair by index or filename logic
   return fronts.map((front, i) => ({
-    front: `/AWU_WEB2/static/images/${folder}/${front}`,
-    back: `/AWU_WEB2/static/images/${folder}/${backs[i] || backs[0]}`
+    front: baseUrl + `/static/images/${folder}/${front}`,
+    back: baseUrl + `/static/images/${folder}/${backs[i] || backs[0]}`
   }));
 }
 
