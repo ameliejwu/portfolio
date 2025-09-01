@@ -12,20 +12,12 @@ inlineScript: false
 </div>
 <div class="gallery-container">
     <div class="gallery-grid">
+        {% for img in images['architecture'] %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Architecture/E0C1AD9B-FFCD-4D27-A7A7-AA92FBBE7051.jpeg" alt="Gallery Image 1">
-            </div>            
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Architecture/IMG_9597.jpg" alt="Gallery Image 2">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}">
             </div>
         </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Architecture/leadenhall.jpeg" alt="Gallery Image 3">
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

@@ -11,45 +11,12 @@ lightbox: true
 </div>
 <div class="gallery-container">
     <div class="gallery-grid">
+        {% for img in images['nightmarket'] %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/000086020003.jpg" alt="Gallery Image 1">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}">
             </div>
         </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/000086020009.jpg" alt="Gallery Image 2">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/000086020014.jpg" alt="Gallery Image 3">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/claw.jpeg" alt="Gallery Image 4">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/IMG_0146.JPG" alt="Gallery Image 5">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/IMG_0149.JPG" alt="Gallery Image 6">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/IMG_0150.JPG" alt="Gallery Image 7">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/Nightmarket/IMG_6688.jpeg" alt="Gallery Image 8">
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

@@ -12,50 +12,12 @@ inlineScript: false
 </div>
 <div class="gallery-container">
     <div class="gallery-grid">
+        {% for img in images['01_zine'] %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P01.jpg" alt="Gallery Image 1">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}">
             </div>
         </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P02.jpg" alt="Gallery Image 2">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P03.jpg" alt="Gallery Image 3">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P04.jpg" alt="Gallery Image 4">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P05.jpg" alt="Gallery Image 5">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P06.jpg" alt="Gallery Image 6">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P07.jpg" alt="Gallery Image 7">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P08.jpg" alt="Gallery Image 8">
-            </div>
-        </div>
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/01/01_Zine_P09.jpg" alt="Gallery Image 8">
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

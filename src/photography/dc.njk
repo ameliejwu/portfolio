@@ -12,40 +12,12 @@ inlineScript: false
 </div>
 <div class="gallery-container">
     <div class="gallery-grid">
+        {% for img in images['dc'] %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/DC/000017230024.jpg" alt="Gallery Image 1">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}">
             </div>
         </div>
-
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/DC/000017230027.jpg" alt="Gallery Image 2">
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/DC/000017230028.jpg" alt="Gallery Image 3">
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/DC/000017230033.jpg" alt="Gallery Image 4">
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/DC/0945CAF3-4FAE-411B-8ECE-B53DAD2355F3_1_105_c (1).jpg" alt="Gallery Image 5">
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <div class="gallery-image">
-                <img src="{{ site.baseUrl }}static/images/collections/DC/CC67A21F-B387-4D59-918F-7997F38210F8_1_105_c (1).jpg" alt="Gallery Image 6">
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
