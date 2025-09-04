@@ -19,7 +19,6 @@
     background: var(--background-color);
 }
 
-/* Main Content */
 .main-content {
     background-color: white;
     width: 100vw;
@@ -28,7 +27,6 @@
     overflow: hidden;
 }
 
-/* About Content */
 .about-container {
     position: absolute;
     top: 50%;
@@ -79,7 +77,6 @@
     text-decoration: underline;
 }
 
-/* Playground and Draggables */
 .playground {
     width: 100%;
     height: 100%;
@@ -116,13 +113,11 @@
     z-index: 1000;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .about-container {
         left: 30px;
