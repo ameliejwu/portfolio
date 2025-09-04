@@ -27,7 +27,6 @@ body {
     padding: 100px 20px;
 }
 
-/* ===== GALLERY STYLES ===== */
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -61,7 +60,6 @@ body {
     color: rgb(188, 16, 16);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .overlay-text {
         flex-direction: column;
@@ -131,7 +129,6 @@ body {
     }
 }
 
-/* ===== IMAGE SIZE OVERRIDES ===== */
 .image-item:nth-child(1) img,
 .image-item:nth-child(2) img {
     width: auto;
@@ -158,14 +155,12 @@ body {
     background-image: none !important;
 }
 
-/* Ensure image and title are above ripple effect */
 .image-item img,
 .image-item .image-title {
     position: relative;
     z-index: 2;
 }
 
-/* ===== ACCESSIBILITY ===== */
 @media (prefers-contrast: high) {
     .image-item.touch-active .image-title {
         color: rgb(0, 100, 0);
