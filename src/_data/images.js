@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const baseUrl = "/AWU_WEB2"
+const baseUrl = "/portfolio"
 const galleryRoot = path.join(__dirname, "..", "static", "images");
 
 function getImages(folder) {
