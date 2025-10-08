@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const baseUrl = "/portfolio"
+const baseUrl = "/portfolio";
 const galleryRoot = path.join(__dirname, "..", "static", "images");
 
 function getImages(folder) {
@@ -18,10 +18,28 @@ function getPairedImages(folder, frontPattern, backPattern) {
   const files = fs.readdirSync(path.join(galleryRoot, folder));
   const fronts = files.filter(f => frontPattern.test(f));
   const backs = files.filter(f => backPattern.test(f));
-  return fronts.map((front, i) => ({
-    front: baseUrl + `/static/images/${folder}/${front}`,
-    back: baseUrl + `/static/images/${folder}/${backs[i] || backs[0]}`
-  }));
+  
+  // Create a map of identifier -> back filename
+  const backMap = new Map();
+  backs.forEach(back => {
+    // Extract identifier (e.g., "james" from "back_james.jpg")
+    const match = back.match(/back_(.+?)\./);
+    if (match) {
+      backMap.set(match[1], back);
+    }
+  });
+  
+  return fronts.map(front => {
+    // Extract identifier from front (e.g., "james" from "front_james.jpg")
+    const match = front.match(/front_(.+?)\./);
+    const identifier = match ? match[1] : null;
+    const backFile = identifier ? backMap.get(identifier) : backs[0];
+    
+    return {
+      front: `${baseUrl}/static/images/${folder}/${front}`,
+      back: `${baseUrl}/static/images/${folder}/${backFile || backs[0]}`
+    };
+  });
 }
 
 module.exports = {
