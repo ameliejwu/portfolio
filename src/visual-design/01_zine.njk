@@ -15,7 +15,7 @@ inlineScript: false
         {% for img in images['01_zine'] %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}" loading="lazy">
             </div>
         </div>
         {% endfor %}

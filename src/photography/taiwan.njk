@@ -14,7 +14,7 @@ lightbox: true
         {% for img in images['taiwan'] %}
         <div class="gallery-item">
             <div class="gallery-image">
-                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}" loading="lazy">
             </div>
         </div>
         {% endfor %}

@@ -14,10 +14,10 @@ inlineScript: true
         <div class="gallery-item">
             <div class="flip-card">
                 <div class="flip-card-front">
-                    <img src="{{ ticket.front }}" alt="Ticket Front {{ loop.index }}">
+                    <img src="{{ ticket.front }}" alt="Ticket Front {{ loop.index }}" loading="lazy">
                 </div>
                 <div class="flip-card-back">
-                    <img src="{{ ticket.back }}" alt="Ticket Back {{ loop.index }}">
+                    <img src="{{ ticket.back }}" alt="Ticket Back {{ loop.index }}" loading="lazy">
                 </div>
             </div>
         </div>
