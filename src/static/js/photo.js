@@ -2,7 +2,7 @@
 class GalleryLightbox {
     constructor() {
         this.lightbox = document.getElementById('lightbox');
-        this.lightboxImg = document.getElementById('lightbox-img');
+        this.lightboxContent = document.getElementById('lightbox-content'); // Changed from lightboxImg
         this.currentImageSpan = document.getElementById('current-image');
         this.totalImagesSpan = document.getElementById('total-images');
         this.closeBtn = document.querySelector('.close');
@@ -30,7 +30,7 @@ class GalleryLightbox {
         this.prevBtn.addEventListener('click', () => this.previousImage());
         this.nextBtn.addEventListener('click', () => this.nextImage());
         
-        // Close lightbox when clicking outside the image
+        // Close lightbox when clicking outside the content
         this.lightbox.addEventListener('click', (e) => {
             if (e.target === this.lightbox) {
                 this.closeLightbox();
@@ -57,36 +57,58 @@ class GalleryLightbox {
     
     openLightbox(index) {
         this.currentIndex = index;
-        this.updateLightboxImage();
+        this.updateLightboxContent();
         this.lightbox.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
     }
     
     closeLightbox() {
         this.lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restore scrolling
+        document.body.style.overflow = 'auto';
+        
+        // Pause any playing videos
+        const video = this.lightboxContent.querySelector('video');
+        if (video) {
+            video.pause();
+        }
     }
     
-    updateLightboxImage() {
+    updateLightboxContent() {
         const currentItem = this.galleryItems[this.currentIndex];
         const img = currentItem.querySelector('img');
+        const video = currentItem.querySelector('video');
         
-        this.lightboxImg.src = img.src;
-        this.lightboxImg.alt = img.alt;
+        // Clear previous content
+        this.lightboxContent.innerHTML = '';
+        
+        if (video) {
+            // Clone and display video
+            const videoClone = video.cloneNode(true);
+            videoClone.classList.add('lightbox-content');
+            videoClone.controls = true; // Add controls in lightbox
+            videoClone.autoplay = true; // Autoplay when opened
+            this.lightboxContent.appendChild(videoClone);
+        } else if (img) {
+            // Create and display image
+            const imgElement = document.createElement('img');
+            imgElement.src = img.src;
+            imgElement.alt = img.alt;
+            imgElement.classList.add('lightbox-content');
+            this.lightboxContent.appendChild(imgElement);
+        }
+        
         this.currentImageSpan.textContent = this.currentIndex + 1;
-        
-        // Update navigation button states
         this.updateNavigationButtons();
     }
     
     previousImage() {
         this.currentIndex = (this.currentIndex - 1 + this.galleryItems.length) % this.galleryItems.length;
-        this.updateLightboxImage();
+        this.updateLightboxContent();
     }
     
     nextImage() {
         this.currentIndex = (this.currentIndex + 1) % this.galleryItems.length;
-        this.updateLightboxImage();
+        this.updateLightboxContent();
     }
     
     updateNavigationButtons() {
