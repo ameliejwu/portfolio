@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+// const baseUrl = "";
 const baseUrl = "/portfolio";
 const galleryRoot = path.join(__dirname, "..", "static", "images");
 
@@ -19,10 +20,8 @@ function getPairedImages(folder, frontPattern, backPattern) {
   const fronts = files.filter(f => frontPattern.test(f));
   const backs = files.filter(f => backPattern.test(f));
   
-  // Create a map of identifier -> back filename
   const backMap = new Map();
   backs.forEach(back => {
-    // Extract identifier (e.g., "james" from "back_james.jpg")
     const match = back.match(/back_(.+?)\./);
     if (match) {
       backMap.set(match[1], back);
@@ -30,7 +29,6 @@ function getPairedImages(folder, frontPattern, backPattern) {
   });
   
   return fronts.map(front => {
-    // Extract identifier from front (e.g., "james" from "front_james.jpg")
     const match = front.match(/front_(.+?)\./);
     const identifier = match ? match[1] : null;
     const backFile = identifier ? backMap.get(identifier) : backs[0];

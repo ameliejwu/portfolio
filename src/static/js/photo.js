@@ -90,8 +90,6 @@ class GalleryLightbox {
     }
     
     updateNavigationButtons() {
-        // Optional: You can add visual feedback for first/last images
-        // For now, we'll use circular navigation (wraps around)
         this.prevBtn.style.opacity = '1';
         this.nextBtn.style.opacity = '1';
     }
