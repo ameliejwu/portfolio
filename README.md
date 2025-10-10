@@ -1,4 +1,4 @@
-# AMELIE WU'S PORTFOLIO
+# AMELIE WU'S PORTFOLIO - **https://ameliejwu.github.io/portfolio/**
 
 This is the source-code for Amelie's portfolio. Built using Eleventy and deployed via GitHub Pages.
 

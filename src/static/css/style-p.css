@@ -67,7 +67,7 @@ body {
 }
 
 .image-item:nth-child(5) {
-    transform: scale(1.1) perspective(0.2rem) translate3d(0, 0, -0.05rem) rotateX(0.13deg) rotateY(-0.04deg);
+    transform: scale(1.1) perspective(0.2rem) translate3d(0, 0, -0.05rem) rotateX(0.13deg) rotateY(0.1deg);
 }
 
 .image-item:hover,
