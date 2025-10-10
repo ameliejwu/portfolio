@@ -20,12 +20,10 @@ inlineScript: false
         </div>
         {% endfor %}
 
-        <div class="gallery-item video-item">
-            <div class="gallery-image">
-                <video autoplay muted loop playsinline>
-                    <source src="{{ site.baseUrl }}static/images/01/01_vid_small.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+    </div>
+    <div class="gallery-item video-item">
+        <video muted controls>
+            <source src="{{ site.baseUrl }}static/images/01/01_vid_small.mp4" type="video/mp4">
+        </video>
     </div>
 </div>
