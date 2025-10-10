@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Design - AMELIE WU</title>
+    <title>Videos - AMELIE WU</title>
     <link rel="icon" href="/portfolio/static/images/homepage/ajwStamp.ico">
     <link rel="stylesheet" href="/portfolio/static/css/navbar.css">
-    <link rel="stylesheet" href="/portfolio/static/css/style-vd.css">
+    <link rel="stylesheet" href="/portfolio/static/css/style-photos.css">
 </head>
 <body class="">
     <main class="main-content">
@@ -25,26 +25,32 @@
         
 
         
-<div class="container">
-    <div class="gallery">
-
-        <div class="image-item clothing">
-            <p class="image-title">Clothing</p></br>
-            <a href="clothing/">
-                <img src="/portfolio/static/images/clothing/Tops/2.jpg" alt="clothes" loading="lazy">
-            </a>
+<div class="gallery-header">
+    <h1>Videos</h1>
+</div>
+<div class="gallery-container">
+    <div class="gallery-grid">
+        <div class="gallery-item video-item">
+            <video autoplay muted loop playsinline>
+                <source src="/portfolio/static/images/videos/backseat_video.mp4" type="video/mp4">
+            </video>
         </div>
-
-        <div class="image-item web-design">
-            <p class="image-title">Web Design</p></br>
-            <a href="web_design/">
-                <img src="/portfolio/static/images/zine icon.png" alt="backseat" loading="lazy">
-            </a> 
-        </div>
-
     </div>
+</div>
     </main>
 
+    
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-wrapper">
+            <button class="lightbox-nav lightbox-prev">‹</button>
+            <div id="lightbox-content"></div>
+            <button class="lightbox-nav lightbox-next">›</button>
+        </div>
+        <div class="lightbox-counter">
+            <span id="current-image">1</span> / <span id="total-images">9</span>
+        </div>
+    </div>
     
 
     
