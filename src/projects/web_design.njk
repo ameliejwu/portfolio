@@ -6,3 +6,18 @@ jsFile: photo.js
 lightbox: true
 inlineScript: false
 ---
+
+<div class="gallery-header">
+    <h1>{{ title }}</h1>
+</div>
+<div class="gallery-container">
+    <div class="gallery-grid">
+        {% for img in images['web_design'] %}
+        <div class="gallery-item">
+            <div class="gallery-image">
+                <img src="{{ img }}" alt="Gallery Image {{ loop.index }}" loading="lazy">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -44,8 +44,6 @@ module.exports = {
   "01_zine": getImages("01"),
   "backseat_zine": getImages("backseat_zine"),
   "misc": getImages("misc"),
-  "ticketsFront": getImages("tickets"),
-  "ticketsBack": getImages("tickets"),
   "tickets": getPairedImages("tickets", /^.*front.*\.(jpg|jpeg|png)$/i, /^.*back.*\.(jpg|jpeg|png)$/i),
   "clothingTops": getImages("clothing/Tops"),
   "clothingFlowerSkirt": getImages("clothing/Flower Skirt"),
@@ -57,4 +55,5 @@ module.exports = {
   "dc": getImages("collections/DC"),
   "france": getImages("collections/France"),
   "architecture": getImages("collections/Architecture"),
+  "web_design": getImages("web_design"),
 };
