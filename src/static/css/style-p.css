@@ -104,25 +104,8 @@ body {
     }
 
     .image-item {
-        margin: 10px;
-        transform: rotate(-2deg) !important;
-    }
-
-    .image-item:nth-child(even) {
-        align-self: center;
-        transform: rotate(-1deg) !important;
-    }
-
-    .image-item:nth-child(odd) {
-        align-self: center;
-        transform: rotate(1deg) !important;
-    }
-
-    .image-item {
-        transition: transform 0.4s ease;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        will-change: transform;
+        transform: rotate(0deg) !important;
+        z-index: 10;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -130,19 +113,17 @@ body {
         user-select: none;
     }
 
-    .image-item:active,
-    .image-item.touch-active {
-        transform: rotate(0deg) !important;
-        z-index: 10;
+    .image-item:nth-child(even) {
+    align-self: center;
+    }
+
+    .image-item:nth-child(odd) {
+        align-self: center;
     }
 
     .image-item:active .image-title,
     .image-item.touch-active .image-title {
         color: rgb(8, 112, 25);
-    }
-
-    .image-item.touch-active {
-        animation: mobileTouchPulse 0.3s ease-out;
     }
 
     .image-item a {
@@ -152,20 +133,6 @@ body {
 
     .image-item img {
         max-height: 250px;
-        transition: transform 0.3s ease;
-    }
-
-    .image-item:active::before,
-    .image-item.touch-active::before {
-        width: 300px;
-        height: 300px;
-        opacity: 1;
-    }
-
-    .image-item:nth-child(1).touch-active,
-    .image-item:nth-child(2).touch-active,
-    .image-item:nth-child(3).touch-active {
-        transform: rotate(0deg) !important;
     }
 }
 
@@ -180,7 +147,6 @@ body {
 
     .image-item {
         margin: 5px;
-        transform: rotate(-1deg) !important;
     }
 
     .image-item img {
@@ -210,11 +176,6 @@ body {
 .main-content {
     color: white;
     background-image: none !important;
-}
-
-@keyframes mobileTouchPulse {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(0deg); }
 }
 
 @media (prefers-contrast: high) {
