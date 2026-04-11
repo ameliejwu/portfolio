@@ -4,6 +4,18 @@ const path = require("path");
 const baseUrl = "/portfolio";
 const galleryRoot = path.join(__dirname, "..", "static", "images");
 
+function getVideos(folder) {
+  const dir = path.join(__dirname, "..", "static", "images", folder);
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter(file => /\.(mp4|webm|mov|ogg)$/i.test(file))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
+    .map(file => ({
+      src: baseUrl + `/static/images/${folder}/${file}`,
+      caption: file.replace(/\.[^.]+$/, "").replace(/[_-]/g, " ")
+    }));
+}
+
 function getImages(folder) {
   const dir = path.join(__dirname, "..", "static", "images", folder);
   if (!fs.existsSync(dir)) return [];
@@ -56,4 +68,5 @@ module.exports = {
   "france": getImages("collections/France"),
   "architecture": getImages("collections/Architecture"),
   "web_design": getImages("web_design"),
+  "videos": getVideos("videos"),
 };
