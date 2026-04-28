@@ -54,6 +54,7 @@ function getPairedImages(folder, frontPattern, backPattern) {
 
 module.exports = {
   "01_zine": getImages("01"),
+  "1year_zine": getImages("1year"),
   "backseat_zine": getImages("backseat_zine"),
   "misc": getImages("misc"),
   "tickets": getPairedImages("tickets", /^.*front.*\.(jpg|jpeg|png)$/i, /^.*back.*\.(jpg|jpeg|png)$/i),
