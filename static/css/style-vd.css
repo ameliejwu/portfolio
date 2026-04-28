@@ -130,13 +130,14 @@ body {
 }
 
 .image-item:nth-child(1) img,
-.image-item:nth-child(2) img {
+.image-item:nth-child(2) img,
+.image-item:nth-child(3) img {
     width: auto;
     height: 400px;
     object-fit: contain;
 }
 
-.image-item:nth-child(4) img {
+.image-item:nth-child(5) img {
     height: 400px !important;
     width: auto;
     object-fit: cover;
